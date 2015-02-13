@@ -13,9 +13,7 @@ class TaskDetailViewController: UIViewController {
     var detailTaskModel: TaskModel!
     
     @IBOutlet weak var taskTextField: UITextField!
-    
     @IBOutlet weak var subtaskTextField: UITextField!
-    
     @IBOutlet weak var dueDatePicker: UIDatePicker!
     
     override func viewDidLoad() {
@@ -27,10 +25,12 @@ class TaskDetailViewController: UIViewController {
         self.dueDatePicker.date = detailTaskModel.date
     }
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
     @IBAction func cancelButtonPressed(sender: UIBarButtonItem) {
         
@@ -38,5 +38,21 @@ class TaskDetailViewController: UIViewController {
         
     }
 
+    @IBAction func doneButtonPressed(sender: UIBarButtonItem) {
+        
+        let appDelegate = (UIApplication.sharedApplication().delegate as AppDelegate)
+        
+        detailTaskModel.task = taskTextField.text
+        detailTaskModel.subtask = subtaskTextField.text
+        detailTaskModel.date = dueDatePicker.date
+        detailTaskModel.completed = detailTaskModel.completed
+        
+        appDelegate.saveContext()
+        
+        self.navigationController?.popToRootViewControllerAnimated(true)
+        
+    }
+    
+    
    
 }

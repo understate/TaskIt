@@ -134,7 +134,11 @@
                                 <action selector="cancelButtonPressed:" destination="7HH-97-LS9" id="mQ1-WM-4f1"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="GQh-lH-UUl"/>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="RPr-x6-nva">
+                            <connections>
+                                <action selector="doneButtonPressed:" destination="7HH-97-LS9" id="75d-po-iEG"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="dueDatePicker" destination="F9k-7p-HCs" id="IO3-V9-q52"/>
@@ -212,6 +216,9 @@
                                 <state key="normal" title="Add Task">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="addTaskButtonPressed:" destination="Nhc-eE-Rej" eventType="touchUpInside" id="GrU-Zr-Umm"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -221,6 +228,11 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="dueDatePicker" destination="yvy-iv-emN" id="VmD-vm-z0T"/>
+                        <outlet property="subTaskTextfield" destination="iMX-TV-nMo" id="8Lf-Rx-YGa"/>
+                        <outlet property="taskTextfield" destination="uFH-53-OkS" id="yJr-zf-uf9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="csu-rG-d0v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
